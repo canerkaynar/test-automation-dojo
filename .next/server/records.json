@@ -1,0 +1,88 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "external \"react\"": 0,
+      "external \"styled-components\"": 1,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/styles/Form.js": 2,
+      "external \"next/link\"": 3,
+      "external \"next/document\"": 4,
+      "external \"next/router\"": 5,
+      "external \"nprogress\"": 6,
+      "external \"next/app\"": 7,
+      "external \"re-resizable\"": 8,
+      "external \"next/head\"": 9,
+      "external \"next/dynamic\"": 10,
+      "multi ./pages/_app.js": 11,
+      "multi ./pages/_document.js": 12,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/_document.js": 13,
+      "multi ./pages/checkbox.js": 14,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/checkbox.js": 15,
+      "multi ./pages/dropdown.js": 16,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/dropdown.js": 17,
+      "multi ./pages/index.js": 18,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js": 19,
+      "multi ./pages/input.js": 20,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/input.js": 21,
+      "multi node_modules/next/dist/pages/_error.js": 22,
+      "node_modules/next/dist/pages/_error.js": 23,
+      "external \"next/error\"": 24,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Inspector.js": 25,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/_app.js b932fee47c3d1b48255c3ea40ac340b1": 26,
+      "external \"console-feed\"": 27
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+      "17": 17,
+      "18": 18,
+      "19": 19,
+      "20": 20,
+      "21": 21,
+      "22": 22,
+      "23": 23,
+      "24": 24,
+      "25": 25,
+      "26": 26,
+      "27": 27
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/nzZhHMrNJ6fdgi~g46nz2/pages/_app.js": 0,
+      "static/nzZhHMrNJ6fdgi~g46nz2/pages/_document.js": 1,
+      "static/nzZhHMrNJ6fdgi~g46nz2/pages/checkbox.js": 2,
+      "static/nzZhHMrNJ6fdgi~g46nz2/pages/dropdown.js": 3,
+      "static/nzZhHMrNJ6fdgi~g46nz2/pages/index.js": 4,
+      "static/nzZhHMrNJ6fdgi~g46nz2/pages/input.js": 5,
+      "static/nzZhHMrNJ6fdgi~g46nz2/pages/_error.js": 6
+    },
+    "bySource": {
+      "0 node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!components/Page.js ./Inspector": 7
+    },
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  }
+}
