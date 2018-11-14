@@ -141,7 +141,8 @@ injectGlobal`
     line-height: 2;
     font-family: 'roboto condensed regular';
     //background: #f1f1f1;
-    background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg) no-repeat;
+    background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg);
+    background-size: cover;
   }
   a {
     text-decoration: none;

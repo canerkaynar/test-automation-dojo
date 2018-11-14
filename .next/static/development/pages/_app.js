@@ -375,7 +375,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'roboto condensed bold';\n    src: url('/static/roboto-condensed-bold.woff2') format('woff2');\n  }\n  @font-face {\n    font-family: 'roboto condensed regular';\n    src: url('/static/roboto-condensed-regular.woff2') format('woff2');\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'roboto condensed regular';\n    //background: #f1f1f1;\n    background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg) no-repeat;\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n\n  button {  font-family: 'roboto condensed regular'; }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'roboto condensed bold';\n    src: url('/static/roboto-condensed-bold.woff2') format('woff2');\n  }\n  @font-face {\n    font-family: 'roboto condensed regular';\n    src: url('/static/roboto-condensed-regular.woff2') format('woff2');\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'roboto condensed regular';\n    //background: #f1f1f1;\n    background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg);\n    background-size: cover;\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n\n  button {  font-family: 'roboto condensed regular'; }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -508,38 +508,38 @@ function (_React$Component) {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 171
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledPage, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171
+          lineNumber: 172
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Meta__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 173
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 174
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Inner, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 175
         },
         __self: this
       }, this.props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "resizer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 179
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(re_resizable__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -575,19 +575,19 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 180
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DynamicInspector, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 195
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 198
         },
         __self: this
       })));

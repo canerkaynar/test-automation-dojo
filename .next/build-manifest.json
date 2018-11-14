@@ -11,7 +11,19 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/checkbox": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/input": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/dropdown": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
