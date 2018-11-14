@@ -1,0 +1,122 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	cursor: default;
+}
+
+:global html.wait,
+:global html.wait * {
+	cursor: wait !important;
+}
+
+body {
+	height: 100%;
+}
+
+body {
+	padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: 'roboto condensed regular';
+    background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg) no-repeat;
+    background: #f1f1f1;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	margin-bottom: 7px;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+input {
+	padding: 0 12px;
+	border-radius: 2px;
+	background-color: white;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+textarea {
+	display: block;
+	padding: 12px;
+	border-radius: 2px;
+	background-color: white;
+}
+
+select {
+	width: 100%;
+	position: relative;
+	font-size: 13px;
+	color: #393939;
+	padding: 9px 30px 9px 12px;
+	border: 0 none;
+	z-index: 1;
+	box-shadow: none;
+	background-color: transparent;
+	background-image: none;
+	appearance: none;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+input:disabled,
+textarea:disabled {
+	color: $grey-pinkish;
+	background-color: $grey-light;
+}
+
+:global .content-box {
+	background-color: #fff;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.23);
+}
+
+:global .link,
+:global .link:visited {
+	color: $blue-link;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+:global .link:hover {
+	text-decoration: underline;
+}
+
+:global .select-box {
+	background-color: white;
+	border: 1px solid $grey-border;
+	border-radius: 2px;
+}
+
+:global .select-box:after {
+	z-index: 0;
+	right: 12px;
+	top: 50%;
+	width: 13px;
+	height: 8px;
+	margin-top: -4px;
+	background: url("data:image/svg+xml;charset=utf8,%3Csvg width='13' height='8' viewBox='0 0 13 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.822 7.17a.996.996 0 0 0 1.298-.097l4.953-4.953A.999.999 0 0 0 12.07.707.996.996 0 0 0 10.66.705L6.382 4.982 2.1.699A.99.99 0 0 0 .7.7.987.987 0 0 0 .7 2.1l4.906 4.906c.066.066.14.121.217.164z' fill='%239E9E9E' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+:global .select-box.is-disabled {
+	background-color: $grey-light;
+}
+
+:global .select-box.is-disabled select {
+	color: $grey-pinkish;
+}
