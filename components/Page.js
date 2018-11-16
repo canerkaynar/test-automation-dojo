@@ -171,7 +171,7 @@ class Page extends React.Component {
             <ThemeProvider theme={theme}>
                 <StyledPage>
                     <Meta/>
-                    <Header/>                                            
+                    <Header selectedPage={this.props.children.type.name}/>                                            
                     <Inner>
                         {/*<div className="box"></div>*/}
                         {this.props.children}
