@@ -13,7 +13,7 @@ const NavStyles = styled.ul`
     align-items: center;
     position: relative;
     text-transform: uppercase;
-    font-family: 'roboto condensed bold';
+    font-family: 'roboto bold';
     font-size: 1em;
     background: none;
     border: 0;

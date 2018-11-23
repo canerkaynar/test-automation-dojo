@@ -13,17 +13,13 @@ const loading = keyframes`
 `;
 
 const Form = styled.form`
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-  background: white;
-  padding: 2rem;
-  border-radius: 6px;
+  //box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  //background: white;
+  //border-radius: 6px;
   font-size: 1.5rem;
   line-height: 1.5;
   font-weight: 600;
-
-  h2 {
-    text-decoration: underline;
-  }
+  
   label {
     display: block;
     margin-bottom: 1rem;
@@ -43,12 +39,13 @@ const Form = styled.form`
   button,
   input[type='submit'] {
     width: auto;
-    background: red;
-    color: white;
+    background: white;
+    color: #23282A;
     border: 0;
     font-size: 2rem;
     font-weight: 600;
     padding: 0.5rem 1.2rem;
+    border: 1px solid #23282A;
   }
   input[type='checkbox'] {
     width: auto;
@@ -58,11 +55,31 @@ const Form = styled.form`
     }
   }
 
+  input.error {
+    border: 2px solid #ea222f;
+    background: #fef6f7;
+  }
+
+  .input-feedback {
+    color: #ea222f;
+    margin-top: .25rem;
+  }
+
+  button:disabled {
+    opacity: .5;
+    cursor: not-allowed !important;
+  }
+
+  button + button {
+    margin-left: .5rem;
+  }
+
   fieldset {
     border: 0;
     padding: 0;
     margin: 0;
     max-width: 400px;
+    margin-bottom: 15px;
 
     &[disabled] {
       opacity: 0.5;

@@ -22,14 +22,14 @@ const Logo = styled.div`
 
 const StyledHeader = styled.nav`
 
-    width: 290px;
+    width: 245px;
     position: absolute;
-    bottom: 30px;
+    bottom: 0;
     top: 0;
     overflow: auto;
     left: 0;
     background-color: ${props => props.theme.blackLight};
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     color: ${props => props.theme.greyLight};
     border-right: 1px solid black;
 
@@ -54,7 +54,7 @@ const StyledHeader = styled.nav`
     .example-list {
         list-style: none;
         padding: 0 2px;
-        margin-left: 0;
+        margin: 5px 0 0 0;
         li {
             border-left: 1px solid black;
             cursor: pointer;
@@ -82,44 +82,59 @@ const StyledHeader = styled.nav`
         padding-bottom: 5px;
         padding-left: 13px;
     }
+
+    .category-list {
+        list-style: none;
+        padding: 0 2px;
+        text-align: center;
+        margin: 15px 0 0 0;
+        li {
+            cursor: pointer;
+            display: inline;
+            padding: 6px;
+            font-family: 'roboto bold';
+        }
+        li + li {
+            border-left: 1px solid white;
+        }
+        li:hover, .active {
+            color: rgb(8, 160, 204);
+        }
+    }
 `;
 
-const examples = [
+const examples = {components:[
     {title: 'Input', url: '/input'},
     {title: 'Checkbox', url: '/checkbox'},
     {title: 'Dropdown', url: '/dropdown'},
     {title: 'Hovers', url: '/hovers'},
-    {title: 'Redirect Link'},
-    {title: 'Button'},
-    {title: 'Datepicker'},
-    {title: 'File Download'},
-    {title: 'Img Source Control'},
-    {title: 'List Items'}
-]
+    {title: 'Redirect Link', url: '/redirect-link'},
+    {title: 'Buttons', url: '/buttons'},
+    {title: 'Datepicker', url: '/datepicker'},
+    {title: 'File Upload', url: '/fileupload'},
+    {title: 'Img Source Control', url: '/'}
+],
+scenerios: [
+    {title: 'Basic Auth', url: '/basic-auth', category: 'scenerios'}
+]};
 
 export default class Header extends React.Component {
 
     constructor(props) {
         super(props);
         this.state={
-            pageList: [],
-            selectedItemTitle: props.selectedPage
+            pageList: examples['components'],
+            selectedItemTitle: props.selectedPage,
+            activeCategory: 'components'
         };
     }
 
-    componentDidMount() {
-        this.setState({
-            ...this.state,
-            pageList: examples
-        })
-    }
-
     searchData = (e) => {
+        const {activeCategory} = this.state;
         let queryData = [];
-        
+
         if(e.target.value !== '') {
-            //console.log(pageList,e.target.value)
-            queryData = examples.filter(item => item.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1);
+            queryData = examples[activeCategory].filter(item => item.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1);
             this.setState({
                 ...this.state,
                 pageList: queryData
@@ -127,7 +142,17 @@ export default class Header extends React.Component {
         } else {
             this.setState({
                 ...this.state,
-                pageList: examples
+                pageList: examples[activeCategory]
+            });
+        }
+    }
+
+    clickCategory = (e) => {
+        if(e.target.innerText !== '') {
+            this.setState({
+                ...this.state,
+                pageList: examples[e.target.innerText.toLowerCase()],
+                activeCategory: e.target.innerText.toLowerCase()
             });
         }
     }
@@ -140,7 +165,7 @@ export default class Header extends React.Component {
     }
 
     render() {
-        const {pageList, selectedItemTitle} = this.state;
+        const {pageList, selectedItemTitle, activeCategory} = this.state;
 
         return(
             <StyledHeader>
@@ -153,6 +178,10 @@ export default class Header extends React.Component {
                 <div className="search-container">
                     <input type="text" placeholder="search" onChange={this.searchData}/>
                 </div>
+                <ul className="category-list">
+                    <li className={activeCategory && activeCategory === 'components' ? 'active' : null} onClick={this.clickCategory}>COMPONENTS</li>
+                    <li className={activeCategory && activeCategory === 'scenerios' ? 'active' : null} onClick={this.clickCategory}>SCENERIOS</li>
+                </ul>
                 <ul className="example-list">
                     {
                         pageList.length > 0

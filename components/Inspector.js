@@ -57,7 +57,7 @@ const InspectorStyle = styled.div`
 const ConsoleTitle = styled.span`
     color: ${props => props.theme.lightgrey};
     margin-left: 2px;
-    font-family: 'roboto condensed bold';
+    font-family: 'roboto bold';
 `;
 
 const ClearButton = styled.button`

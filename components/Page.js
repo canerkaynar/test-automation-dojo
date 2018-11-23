@@ -7,6 +7,7 @@ import Footer from './Footer';
 import dynamic from 'next/dynamic';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import normalize from 'normalize.css/normalize.css';
 
 Router.onRouteChangeStart = () => {
     NProgress.start();
@@ -100,8 +101,8 @@ const Inner = styled.div`
     //background: rgba(255, 255, 255, 0.7);
     border-radius: 6px;
     margin: 0 auto;
-    padding: 2rem;
-    left: 290px;
+    padding: 5rem 6rem;
+    left: 245px;
     right: 0;
     top: 0;
     bottom: 0;
@@ -120,12 +121,12 @@ const Inner = styled.div`
 
 injectGlobal`
   @font-face {
-    font-family: 'roboto condensed bold';
-    src: url('/static/roboto-condensed-bold.woff2') format('woff2');
+    font-family: 'roboto bold';
+    src: url('/static/roboto-bold.woff2') format('woff2');
   }
   @font-face {
-    font-family: 'roboto condensed regular';
-    src: url('/static/roboto-condensed-regular.woff2') format('woff2');
+    font-family: 'roboto regular';
+    src: url('/static/roboto-regular.woff2') format('woff2');
   }
   html {
     box-sizing: border-box;
@@ -139,23 +140,25 @@ injectGlobal`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
-    font-family: 'roboto condensed regular';
-    //background: #f1f1f1;
-    background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg);
-    background-size: cover;
+    font-family: 'roboto regular';
+    background: #f1f1f1;
+    //background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg);
+    //background-size: cover;
   }
   a {
     text-decoration: none;
     color: ${theme.black};
   }
 
-  button {  font-family: 'roboto condensed regular'; }
+  button {  font-family: 'roboto regular'; }
+  ${normalize}
+
 `;
 
 /*const MyButton = styled.button`
     background: red;
     font-size: ${props => (props.huge ? '40px' : '20px')};
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
 `;*/
 
 class Page extends React.Component {
@@ -176,7 +179,7 @@ class Page extends React.Component {
                         {/*<div className="box"></div>*/}
                         {this.props.children}
                     </Inner>
-                    <span className="resizer"></span>
+                    {/* <span className="resizer"></span>
                     <Resizable
                         className={"resize-console"}
                         style={{position: "absolute", bottom: 35, right: 0, left: 290, background: "#464749", padding: 10}}
@@ -193,9 +196,9 @@ class Page extends React.Component {
                         }}
                         >
                         <DynamicInspector/>
-                    </Resizable>
+                    </Resizable> */}
                
-                    <Footer/>
+                    {/* <Footer/> */}
                 </StyledPage>
             </ThemeProvider>
         );
