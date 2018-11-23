@@ -7,7 +7,6 @@ import Footer from './Footer';
 import dynamic from 'next/dynamic';
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import normalize from 'normalize.css/normalize.css';
 
 Router.onRouteChangeStart = () => {
     NProgress.start();
@@ -151,7 +150,6 @@ injectGlobal`
   }
 
   button {  font-family: 'roboto regular'; }
-  ${normalize}
 
 `;
 
