@@ -1,38 +1,50 @@
 import styled from 'styled-components';
 
 const Item = styled.div`
-  background: white;
-  border: 1px solid ${props => props.theme.offWhite};
-  box-shadow: ${props => props.theme.bs};
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  
+  flex: 0 0 33.33%;
+  margin-bottom: 20px;
+  padding: 0 1rem;
+
   img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: auto;
+    display: block;
   }
   p {
     font-size: 12px;
-    line-height: 2;
+    line-height: 1.4;
     font-weight: 300;
-    flex-grow: 1;
-    padding: 0 3rem;
     font-size: 1.5rem;
+    margin: 5px 0;
+    text-align: left;
+    padding: 0 1rem;
   }
   .buttonList {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    border-top: 1px solid ${props => props.theme.lightgrey};
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 1px;
-    background: ${props => props.theme.lightgrey};
+    border-top: 1px solid #E1E1E1;
+    background: #E1E1E1;
     & > * {
       background: white;
       border: 0;
       font-size: 1rem;
       padding: 1rem;
+      width: 100%;
     }
+  }
+  .detail-wrapper {
+    padding: 0.5rem 0;
+  }
+
+  .item-inner {
+    background: white;
+    border: 1px solid #EDEDED;
+    box-shadow: 0 12px 24px 0 rgba(0,0,0,0.09);
+    position: relative;
+    width: 240px;
+    float: left;
   }
 `;
 

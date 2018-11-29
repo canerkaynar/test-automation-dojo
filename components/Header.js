@@ -5,14 +5,13 @@ const Logo = styled.div`
     text-align: center;
 
         a {
-            padding: 1rem 1rem;
             color: white;
             text-transform: uppercase;
             text-decoration: none;
+            display: inline-block;
         }
         img {
             vertical-align: middle;
-            margin-left: -15px;
         }
     @media (max-width: 1300px) {
         margin: 0;
@@ -34,7 +33,9 @@ const StyledHeader = styled.nav`
     border-right: 1px solid black;
 
     .bar {
-        margin: 0 auto;
+        margin-left: -15px;
+        margin-bottom: 30px;
+        margin-top: 10px;
     }
     .search-container { 
         position: relative;
@@ -53,10 +54,11 @@ const StyledHeader = styled.nav`
     }
     .example-list {
         list-style: none;
-        padding: 0 2px;
-        margin: 5px 0 0 0;
+        padding: 0;
+        margin: 0;
+        background: #373737;
         li {
-            border-left: 1px solid black;
+            border-left: 1px solid #373737;
             cursor: pointer;
         }
         li:hover, .active {
@@ -68,8 +70,8 @@ const StyledHeader = styled.nav`
             color: ${props => props.theme.greyLight};
             width: 100%;
             display: block;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding-top: 8px;
+            padding-bottom: 8px;
             padding-left: 12px;
         }
         
@@ -85,20 +87,26 @@ const StyledHeader = styled.nav`
 
     .category-list {
         list-style: none;
-        padding: 0 2px;
+        padding: 0;
         text-align: center;
         margin: 15px 0 0 0;
+        display: block;
+        border: 1px solid #373737;
+        border-bottom: none;
         li {
             cursor: pointer;
-            display: inline;
-            padding: 6px;
+            display: inline-block;
+            padding: 12px 6px;
             font-family: 'roboto bold';
+            width: 100px;
+            &:first-child {
+                width: 112px;
+            }            
         }
-        li + li {
-            border-left: 1px solid white;
-        }
+
         li:hover, .active {
             color: rgb(8, 160, 204);
+            background: #373737;
         }
     }
 `;
@@ -111,11 +119,10 @@ const examples = {components:[
     {title: 'Redirect Link', url: '/redirect-link'},
     {title: 'Buttons', url: '/buttons'},
     {title: 'Datepicker', url: '/datepicker'},
-    {title: 'File Upload', url: '/fileupload'},
-    {title: 'Img Source Control', url: '/'}
+    {title: 'File Upload', url: '/fileupload'}
 ],
-scenerios: [
-    {title: 'Basic Auth', url: '/basic-auth', category: 'scenerios'}
+scenarios: [
+    {title: 'Basic Auth', url: '/basic-auth', category: 'scenarios'}
 ]};
 
 export default class Header extends React.Component {
@@ -125,9 +132,11 @@ export default class Header extends React.Component {
         this.state={
             pageList: examples['components'],
             selectedItemTitle: props.selectedPage,
-            activeCategory: 'components'
+            activeCategory: 'components',
+            searchValue: ''
         };
     }
+
 
     searchData = (e) => {
         const {activeCategory} = this.state;
@@ -137,23 +146,36 @@ export default class Header extends React.Component {
             queryData = examples[activeCategory].filter(item => item.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1);
             this.setState({
                 ...this.state,
-                pageList: queryData
+                pageList: queryData,
+                searchValue: e.target.value
             });
         } else {
             this.setState({
                 ...this.state,
-                pageList: examples[activeCategory]
+                pageList: examples[activeCategory],
+                searchValue: ''
             });
         }
     }
 
     clickCategory = (e) => {
         if(e.target.innerText !== '') {
-            this.setState({
-                ...this.state,
-                pageList: examples[e.target.innerText.toLowerCase()],
-                activeCategory: e.target.innerText.toLowerCase()
-            });
+            if (this.state.searchValue !== '') {
+                let queryData = examples[e.target.innerText.toLowerCase()].filter(item => item.title.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+                console.log(examples[e.target.innerText.toLowerCase()])
+                this.setState({
+                    ...this.state,
+                    pageList: queryData,
+                    activeCategory: e.target.innerText.toLowerCase()
+                });
+            } else {
+                this.setState({
+                    ...this.state,
+                    pageList: examples[e.target.innerText.toLowerCase()],
+                    activeCategory: e.target.innerText.toLowerCase()
+                });
+            }
+
         }
     }
 
@@ -174,13 +196,12 @@ export default class Header extends React.Component {
                         <img src="/static/kloia-logo.png" srcSet="/static/kloia-logo.png 1x, /static/kloia-logo-2x.png 2x" width="130" height="58"/>
                     </a>
                 </Logo>
-                <h1 className="title">TEST AUTOMATION<br/>DOJO</h1>
                 <div className="search-container">
-                    <input type="text" placeholder="search" onChange={this.searchData}/>
+                    <input type="text" placeholder="Search" onChange={this.searchData}/>
                 </div>
                 <ul className="category-list">
                     <li className={activeCategory && activeCategory === 'components' ? 'active' : null} onClick={this.clickCategory}>COMPONENTS</li>
-                    <li className={activeCategory && activeCategory === 'scenerios' ? 'active' : null} onClick={this.clickCategory}>SCENERIOS</li>
+                    <li className={activeCategory && activeCategory === 'scenarios' ? 'active' : null} onClick={this.clickCategory}>SCENARIOS</li>
                 </ul>
                 <ul className="example-list">
                     {

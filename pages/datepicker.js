@@ -2,6 +2,7 @@ import moment from "moment";
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
 import {SingleDatePicker} from 'react-dates';
+import Breadcrumb from '../components/Breadcrumb.js';
 
 
 export default class Datepicker extends React.Component {
@@ -24,6 +25,7 @@ export default class Datepicker extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <Breadcrumb currentPage="Datepicker"/>
                 <h2>Datepicker</h2>
                 <SingleDatePicker
                           // showClearDate={true}

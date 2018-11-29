@@ -1,36 +1,29 @@
 import FormStyle from '../components/styles/Form.js';
+import Breadcrumb from '../components/Breadcrumb.js';
 
-const Checkbox = () => (
-    <FormStyle onSubmit={(e) => e.preventDefault()}>
-        <h2>Checkbox</h2>
-        <fieldset>
-            <div className="checkbox-wrapper">
-                <input type="checkbox" className="field1" value="Male"/><label>Male</label>
-            </div>
-            <div className="checkbox-wrapper">
-                <input type="checkbox" className="field2" value="Female"/><label>Female</label>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <div className="checkbox-wrapper">
-                <input type="checkbox" id="field3" value="red"/><label htmlFor="field3">Red</label>
-            </div>
-            <div className="checkbox-wrapper">
-                <input type="checkbox" id="field4" value="Orange"/><label htmlFor="field4">orange</label>   
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <div className="checkbox-wrapper">
-                <input type="checkbox" name="field5" value="BMW"/><label>BMW</label>
-            </div>
-            <div className="checkbox-wrapper">
-                <input type="checkbox" name="field6" value="Audi"/><label>Audi</label>
-            </div>
-        </fieldset>
-        
-    </FormStyle>
-);
-
-export default Checkbox;
+export default class Checkbox extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <Breadcrumb currentPage="Checkbox"/>
+                <h2>Checkbox</h2>
+                <FormStyle onSubmit={(e) => e.preventDefault()}> 
+                    <fieldset>
+                        <div className="checkbox-wrapper">
+                            <input type="checkbox" className="field1" value="Gandalf"/><label>Gandalf</label>
+                        </div>
+                        <div className="checkbox-wrapper">
+                            <input type="checkbox" id="field2" value="Aragorn"/><label htmlFor="field2">Aragorn</label>
+                        </div>
+                        <div className="checkbox-wrapper">
+                            <input type="checkbox" name="field3" value="Legolas"/><label>Legolas</label>
+                        </div>
+                        <div className="checkbox-wrapper">
+                            <input type="checkbox" name="field4" id="field4" value="Legolas"/><label htmlFor="field4">Saruman</label>
+                        </div>
+                    </fieldset>
+                </FormStyle>
+            </React.Fragment>
+        )
+    }
+}

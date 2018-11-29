@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'; 
 import Resizable from 're-resizable';
 import Header from './Header';
+import Notebook from './Notebook';
 import Meta from './Meta';
 import Footer from './Footer';
 import dynamic from 'next/dynamic';
@@ -97,17 +98,16 @@ const StyledPage = styled.div`
 `;
 
 const Inner = styled.div`
-    //background: rgba(255, 255, 255, 0.7);
-    border-radius: 6px;
-    margin: 0 auto;
-    padding: 5rem 6rem;
+    padding: 3rem 6rem;
     left: 245px;
     right: 0;
     top: 0;
     bottom: 0;
     position: absolute;
     overflow: auto;
-    margin-bottom: 35px;
+    background: white;
+    max-width: 900px;
+    background: #fcfcfc;
 
     .box {
         box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -138,7 +138,7 @@ injectGlobal`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height: 2;
+    line-height: 1.4;
     font-family: 'roboto regular';
     background: #f1f1f1;
     //background: url(https://kloia.co.uk/wp-content/uploads/sites/12/2018/03/kloia_background_v2.jpg);
@@ -150,6 +150,26 @@ injectGlobal`
   }
 
   button {  font-family: 'roboto regular'; }
+
+  .btn {
+        background: white;
+        color: #23282A;
+        border: 1px solid #23282A;
+        border-radius: 0;
+        font-size: 2rem;
+        padding: 0.8rem 1.5rem;
+        display: inline-block;
+        width: auto;
+        transition: all 0.3s;
+            &[disabled] {
+                opacity: 0.3;
+            }
+        &:hover {
+            cursor: pointer;
+            background-color: #23282A;
+            color: white;
+        }    
+    }
 
 `;
 
@@ -174,9 +194,11 @@ class Page extends React.Component {
                     <Meta/>
                     <Header selectedPage={this.props.children.type.name}/>                                            
                     <Inner>
-                        {/*<div className="box"></div>*/}
                         {this.props.children}
                     </Inner>
+                    <Notebook/>
+                    
+
                     {/* <span className="resizer"></span>
                     <Resizable
                         className={"resize-console"}

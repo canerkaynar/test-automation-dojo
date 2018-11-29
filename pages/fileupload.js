@@ -1,6 +1,12 @@
 import Dropzone from 'react-dropzone'
+import Breadcrumb from '../components/Breadcrumb.js';
+import styled from 'styled-components'; 
 
-
+const FileUploadStyle = styled.div`
+    .explanation {
+        padding: 20px 10px;
+    }
+`;
 export default class FileUpload extends React.Component {
 
     constructor() {
@@ -22,7 +28,8 @@ export default class FileUpload extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <FileUploadStyle>
+                <Breadcrumb currentPage="File Upload"/>
                 <h2>File Upload</h2>
                 <section>
                     <div className="dropzone">
@@ -30,7 +37,7 @@ export default class FileUpload extends React.Component {
                         onDrop={this.onDrop.bind(this)}
                         onFileDialogCancel={this.onCancel.bind(this)}
                     >
-                        <p>Try dropping some files here, or click to select files to upload.</p>
+                        <div className="explanation">Try dropping some files here, or click to select files to upload.</div>
                     </Dropzone>
                     </div>
                     <aside>
@@ -42,7 +49,7 @@ export default class FileUpload extends React.Component {
                     </ul>
                     </aside>
                 </section>
-            </React.Fragment>   
+            </FileUploadStyle>   
         )
     }
 };
