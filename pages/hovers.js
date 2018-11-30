@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb.js';
 const StyledHovers = styled.div`
     .hover-explanation-wrapper {
         margin-top: 20px;
+        line-height: 1.4;
     }
 
     .hover-explanation {

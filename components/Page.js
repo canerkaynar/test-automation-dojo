@@ -30,7 +30,7 @@ const theme = {
     black: '#393939',
     blackLight: '#23282A',
     grey: '#3A3A3A',
-    greyLight: '#e0e0e0',
+    greyLight: '#ccc',
     white: '#FFFFFF',
     lightgrey: '#E1E1E1',
     offWhite: '#EDEDED',
@@ -99,22 +99,19 @@ const StyledPage = styled.div`
 
 const Inner = styled.div`
     padding: 3rem 6rem;
-    left: 245px;
-    right: 0;
     top: 0;
     bottom: 0;
     position: absolute;
     overflow: auto;
-    background: white;
-    max-width: 900px;
+    width: calc(100% - 540px);
     background: #fcfcfc;
+    margin-left: 245px;
+    margin-right: 300px;
+`;
 
-    .box {
-        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-        background: white;
-        padding: 1rem;
-        border-radius: 6px;
-    }
+const Container = styled.div`
+    max-width: 1060px;
+    margin: 0 auto;
 `;
 
 
@@ -194,7 +191,9 @@ class Page extends React.Component {
                     <Meta/>
                     <Header selectedPage={this.props.children.type.name}/>                                            
                     <Inner>
-                        {this.props.children}
+                        <Container>
+                            {this.props.children}
+                        </Container>
                     </Inner>
                     <Notebook/>
                     

@@ -5,13 +5,14 @@ import FormStyle from '../components/styles/Form.js';
 
 const NotebookStyle = styled.div`
     padding: 3rem 0.5rem;
-    left: 1145px;
     right: 0;
     top: 0;
     bottom: 0;
-    position: absolute;
+    width: 295px;
+    position: fixed;
     overflow: hidden;
     background: #f1f1f1;
+    height: 100%;
 
 form {
     position: absolute;

@@ -22,7 +22,7 @@ const Logo = styled.div`
 const StyledHeader = styled.nav`
 
     width: 245px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     top: 0;
     overflow: auto;
@@ -31,6 +31,7 @@ const StyledHeader = styled.nav`
     padding: 2rem 1.5rem;
     color: ${props => props.theme.greyLight};
     border-right: 1px solid black;
+    height: 100%;
 
     .bar {
         margin-left: -15px;
@@ -40,12 +41,17 @@ const StyledHeader = styled.nav`
     .search-container { 
         position: relative;
         input {
-            padding: 7px;
-            width: 100%;
-            color: #aaa;
             border: 1px solid #585858;
             background-color: #373737;
+            width: 100%;
+            padding: 7px 10px 7px 10px;
+            font-size: 1.5rem;
             border-radius: 2px;
+            font-family: 'roboto regular';
+            color: ${props => props.theme.greyLight};
+        }
+        input:focus {
+            outline: none;
         }
     }
     .title {
@@ -61,7 +67,7 @@ const StyledHeader = styled.nav`
             border-left: 1px solid #373737;
             cursor: pointer;
         }
-        li:hover, .active {
+        .active {
             background-color: rgba(97, 218, 251, 0.098);
             color: rgb(227, 230, 232);
             border-color: rgb(5, 161, 204);
@@ -73,6 +79,9 @@ const StyledHeader = styled.nav`
             padding-top: 8px;
             padding-bottom: 8px;
             padding-left: 12px;
+        }
+        a:hover {
+            color: #e6e6e6;
         }
         
     }
@@ -99,15 +108,23 @@ const StyledHeader = styled.nav`
             padding: 12px 6px;
             font-family: 'roboto bold';
             width: 100px;
+            color: ${props => props.theme.greyLight};
             &:first-child {
                 width: 112px;
             }            
         }
 
-        li:hover, .active {
+        li:hover {
+            color: #e6e6e6;
+        }
+        .active {
             color: rgb(8, 160, 204);
             background: #373737;
         }
+        .active:hover {
+            color: rgb(8, 160, 204);
+        }
+        
     }
 `;
 
@@ -197,7 +214,7 @@ export default class Header extends React.Component {
                     </a>
                 </Logo>
                 <div className="search-container">
-                    <input type="text" placeholder="Search" onChange={this.searchData}/>
+                    <input type="text" placeholder="Search..." onChange={this.searchData}/>
                 </div>
                 <ul className="category-list">
                     <li className={activeCategory && activeCategory === 'components' ? 'active' : null} onClick={this.clickCategory}>COMPONENTS</li>

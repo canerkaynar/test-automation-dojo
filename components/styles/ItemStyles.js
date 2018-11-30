@@ -44,7 +44,7 @@ const Item = styled.div`
     box-shadow: 0 12px 24px 0 rgba(0,0,0,0.09);
     position: relative;
     width: 240px;
-    float: left;
+    margin: 0 auto;
   }
 `;
 

@@ -4,15 +4,41 @@ import Breadcrumb from '../components/Breadcrumb.js';
 
 
 export default class Buttons extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            text: ''
+        }
+    }
+
+    handleOnClick = (e) => {
+        e.preventDefault(); 
+        let buttonName = '';
+        if(e.target.tagName === 'A') {
+            buttonName = '3';
+        } else if (e.target.tagName === 'INPUT') {
+            buttonName = '1';
+        } else {
+            buttonName = '2';            
+        }
+        this.setState({
+            text: `You have clicked the button ${buttonName}`
+        })
+    }
+    
     render() {
         return (
-            <FormStyle>
+            <React.Fragment>
                 <Breadcrumb currentPage="Buttons"/>
                 <h2>Buttons</h2>
-                <input className="btn" type="button" value="Input Button"/><br/><br/>
-                <button title="button-title">Button</button><br/><br/>
-                <a className="btn" href="#">Link Button</a>
-            </FormStyle>
+                <FormStyle>
+                    <input onClick={this.handleOnClick} className="btn" type="button" value="Button 1"/><br/><br/>
+                    <button onClick={this.handleOnClick} title="button-title">Button 2</button><br/><br/>
+                    <a onClick={this.handleOnClick} className="btn" href="#">Button 3</a>
+                    <br/><br/>
+                    <h3>{this.state.text}</h3>
+                </FormStyle>
+            </React.Fragment>
         )
     }
     

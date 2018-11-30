@@ -44,7 +44,7 @@ export default class FileUpload extends React.Component {
                     <h3>Dropped files</h3>
                     <ul>
                         {
-                        this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+                        this.state.files.map(f => <li key={f.name}>{f.name}</li>)
                         }
                     </ul>
                     </aside>
