@@ -34,7 +34,7 @@ export default class Buttons extends React.Component {
                 <FormStyle>
                     <input onClick={this.handleOnClick} className="btn" type="button" value="Button 1"/><br/><br/>
                     <button onClick={this.handleOnClick} title="button-title">Button 2</button><br/><br/>
-                    <a onClick={this.handleOnClick} className="btn" href="#">Button 3</a>
+                    <a onClick={this.handleOnClick} id="button3" className="btn" href="#">Button 3</a>
                     <br/><br/>
                     <h3>{this.state.text}</h3>
                 </FormStyle>

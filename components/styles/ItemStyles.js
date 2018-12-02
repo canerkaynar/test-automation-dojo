@@ -10,6 +10,7 @@ const Item = styled.div`
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 4px 4px 0px 0px;
   }
   p {
     font-size: 12px;
@@ -17,8 +18,15 @@ const Item = styled.div`
     font-weight: 300;
     font-size: 1.5rem;
     margin: 5px 0;
+    height: 40px;
     text-align: left;
     padding: 0 1rem;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
   }
   .buttonList {
     display: flex;
@@ -45,6 +53,10 @@ const Item = styled.div`
     position: relative;
     width: 240px;
     margin: 0 auto;
+    border-radius: 4px;
+    a {
+      display: block;
+    }
   }
 `;
 
