@@ -5,7 +5,10 @@ const NavStyles = styled.ul`
   padding: 0;
   display: flex;
   justify-self: end;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  background: #fcfcfc;
+  margin-bottom: 40px;
+  border-bottom: 1px solid ${props => props.theme.lightgrey};
   a,
   button {
     padding: 1rem 2rem;
@@ -18,13 +21,13 @@ const NavStyles = styled.ul`
     background: none;
     border: 0;
     cursor: pointer;
-    color: ${props => props.theme.greyLight};
+    color: #212729;
     margin: 0 auto;
     @media (max-width: 700px) {
       font-size: 10px;
       padding: 0 10px;
     }
-    /*&:before {
+    &:before {
       content: '';
       background: ${props => props.theme.blackLight};
       height: 100%;
@@ -35,7 +38,7 @@ const NavStyles = styled.ul`
     }
     &:after {
       height: 2px;
-      background: #283272;
+      background: #ff8b39;
       content: '';
       width: 0;
       position: absolute;
@@ -48,12 +51,12 @@ const NavStyles = styled.ul`
     &:hover,
     &:focus {
       outline: none;
-      color: #283272;
+      color: #ff8b39;
       transition: 0.3s;
       &:after {
         width: calc(100% - 40px);
       }
-    }*/
+    }
   }
   @media (max-width: 1300px) {
     //border-top: 1px solid ${props => props.theme.lightgrey};

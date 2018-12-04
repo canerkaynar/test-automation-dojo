@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { ROUTES } from '../lib/routes';
 
 const Logo = styled.div`
     text-align: center;
@@ -128,26 +129,12 @@ const StyledHeader = styled.nav`
     }
 `;
 
-const examples = {components:[
-    {title: 'Input', url: '/input'},
-    {title: 'Checkbox', url: '/checkbox'},
-    {title: 'Dropdown', url: '/dropdown'},
-    {title: 'Hovers', url: '/hovers'},
-    {title: 'Redirect Link', url: '/redirect-link'},
-    {title: 'Buttons', url: '/buttons'},
-    {title: 'Datepicker', url: '/datepicker'},
-    {title: 'File Upload', url: '/fileupload'}
-],
-scenarios: [
-    {title: 'Basic Auth', url: '/basic-auth', category: 'scenarios'}
-]};
-
 export default class Header extends React.Component {
 
     constructor(props) {
         super(props);
         this.state={
-            pageList: examples['components'],
+            pageList: ROUTES['components'],
             selectedItemTitle: props.selectedPage,
             activeCategory: 'components',
             searchValue: ''
@@ -160,7 +147,7 @@ export default class Header extends React.Component {
         let queryData = [];
 
         if(e.target.value !== '') {
-            queryData = examples[activeCategory].filter(item => item.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1);
+            queryData = ROUTES[activeCategory].filter(item => item.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1);
             this.setState({
                 ...this.state,
                 pageList: queryData,
@@ -169,7 +156,7 @@ export default class Header extends React.Component {
         } else {
             this.setState({
                 ...this.state,
-                pageList: examples[activeCategory],
+                pageList: ROUTES[activeCategory],
                 searchValue: ''
             });
         }
@@ -178,8 +165,8 @@ export default class Header extends React.Component {
     clickCategory = (e) => {
         if(e.target.innerText !== '') {
             if (this.state.searchValue !== '') {
-                let queryData = examples[e.target.innerText.toLowerCase()].filter(item => item.title.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
-                console.log(examples[e.target.innerText.toLowerCase()])
+                let queryData = ROUTES[e.target.innerText.toLowerCase()].filter(item => item.title.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+                console.log(ROUTES[e.target.innerText.toLowerCase()])
                 this.setState({
                     ...this.state,
                     pageList: queryData,
@@ -188,7 +175,7 @@ export default class Header extends React.Component {
             } else {
                 this.setState({
                     ...this.state,
-                    pageList: examples[e.target.innerText.toLowerCase()],
+                    pageList: ROUTES[e.target.innerText.toLowerCase()],
                     activeCategory: e.target.innerText.toLowerCase()
                 });
             }

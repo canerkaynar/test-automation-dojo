@@ -32,6 +32,7 @@ const ItemsList = styled.div`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  padding: 0 30px;
 `;
 
 class Items extends Component {

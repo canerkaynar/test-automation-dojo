@@ -8,7 +8,7 @@ const Title = styled.div`
     //background: ${props => props.theme.red};
     display: inline;
     line-height: 1.4;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     color: black;
     padding: 0 1rem;

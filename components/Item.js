@@ -23,7 +23,7 @@ export default class Item extends Component {
                 query: { id: item.id },
                 }}>
                 <a>
-                    {item.image && <img width="240" src={item.image} alt={item.title} />}
+                    {item.image && <img width="220" heigth="204" src={item.image} alt={item.title} />}
                     <div className="detail-wrapper">
                         <Title>                 
                             <div>{item.title}</div>

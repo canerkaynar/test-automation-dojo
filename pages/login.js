@@ -16,7 +16,7 @@ export default class Input extends React.Component {
 
         return (
             <React.Fragment>
-                <h2>Basic Auth</h2>
+                <h2>Login</h2>
                 <FormStyle onSubmit={(e) => e.preventDefault()}>
                     <Formik
                         initialValues={{ email: '', password: '' }}

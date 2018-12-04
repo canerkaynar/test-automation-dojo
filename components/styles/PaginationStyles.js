@@ -9,10 +9,10 @@ const PaginationStyles = styled.div`
   align-content: center;
   margin: 2rem 0;
   border: 1px solid ${props => props.theme.lightgrey};
-  border-radius: 10px;
+  border-radius: 4px;
   & > * {
     margin: 0;
-    padding: 15px 30px;
+    padding: 8px 25px;
     border-right: 1px solid ${props => props.theme.lightgrey};
     &:last-child {
       border-right: 0;

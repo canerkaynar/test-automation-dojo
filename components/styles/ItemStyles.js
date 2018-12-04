@@ -8,9 +8,10 @@ const Item = styled.div`
 
   img {
     width: 100%;
-    height: auto;
+    height: 204px;
     display: block;
     border-radius: 4px 4px 0px 0px;
+    object-fit: cover;
   }
   p {
     font-size: 12px;
@@ -51,7 +52,7 @@ const Item = styled.div`
     border: 1px solid #EDEDED;
     box-shadow: 0 12px 24px 0 rgba(0,0,0,0.09);
     position: relative;
-    width: 240px;
+    width: 220px;
     margin: 0 auto;
     border-radius: 4px;
     a {

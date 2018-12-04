@@ -1,8 +1,13 @@
 import CreateItem from '../components/CreateItem';
+import PleaseSignIn from '../components/PleaseSignIn';
+import Navigation from '../components/Navigation';
 
 const Sell = props => (
   <div>
-    <CreateItem />
+    <Navigation/>
+    <PleaseSignIn>
+      <CreateItem />
+    </PleaseSignIn>
   </div>
 );
 
