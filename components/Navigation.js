@@ -76,9 +76,7 @@ const Nav = () => (
 
         )}
       </NavStyles>
-      { me && (
-        <Cart />
-      )}
+      <Cart />
       </>
     )}
   </User>
