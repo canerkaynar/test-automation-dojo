@@ -146,7 +146,7 @@ injectGlobal`
     color: ${theme.black};
   }
 
-  button {
+  button, input {
       font-family: 'roboto regular';
       &:focus {
           outline: none;

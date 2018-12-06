@@ -7,7 +7,6 @@ const NavStyles = styled.ul`
   justify-self: end;
   font-size: 1.5rem;
   background: #fcfcfc;
-  margin-bottom: 40px;
   border-bottom: 1px solid ${props => props.theme.lightgrey};
   a,
   button {

@@ -14,7 +14,7 @@ const SingleItemStyles = styled.div`
     max-width: 350px;
     float: left;
     box-shadow: ${props => props.theme.bs};
-    border-radius: 4px;
+    border-radius: 2px;
   }
   .image-wrapper {
     width: 352px;

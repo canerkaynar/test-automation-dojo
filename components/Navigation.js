@@ -6,6 +6,7 @@ import User from './User';
 import Signout from './Signout';
 import styled from 'styled-components';
 import Cart from './Cart';
+import Search from './Search';
 
 
 const Logo = styled.h1`
@@ -37,6 +38,7 @@ const Logo = styled.h1`
 `;
 
 const Nav = () => (
+  <>
   <User>
     {({ data: { me } }) => (
       <>
@@ -80,6 +82,8 @@ const Nav = () => (
       </>
     )}
   </User>
+  <Search/>
+  </>
 );
 
 export default Nav;

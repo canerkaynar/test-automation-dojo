@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import { adopt } from 'react-adopt';
 import User from './User';
 import CartStyles from './styles/CartStyles';
 import Supreme from './styles/Supreme';
@@ -22,42 +23,42 @@ const TOGGLE_CART_MUTATION = gql`
   }
 `;
 
+/* eslint-disable */
+const Composed = adopt({
+    user: ({ render }) => <User>{render}</User>,
+    toggleCart: ({ render }) => <Mutation mutation={TOGGLE_CART_MUTATION}>{render}</Mutation>,
+    localState: ({ render }) => <Query query={LOCAL_STATE_QUERY}>{render}</Query>,
+  });
+  /* eslint-enable */
+
 const Cart = () => (
-  <User>
-    {({ data: { me } }) => {
-      if (!me) return null;
-      console.log(me);
-      return (
-        <Mutation mutation={TOGGLE_CART_MUTATION}>
-          {toggleCart => (
-            <Query query={LOCAL_STATE_QUERY}>
-              {({ data }) => (
-                <CartStyles open={data.cartOpen}>
-                  <header>
+    <Composed>
+        {({ user, toggleCart, localState }) => {
+            const me = user.data.me;
+            if (!me) return null;
+            return (
+                <CartStyles open={localState.data.cartOpen}>
+                    <header>
                     <CloseButton onClick={toggleCart} title="close">
-                      &times;
+                        &times;
                     </CloseButton>
                     <h3>Shopping Cart</h3>
                     <p>
-                      You have {me.cart.length} item{me.cart.length === 1 ? '' : 's'} in your cart.
+                        You have {me.cart.length} item{me.cart.length === 1 ? '' : 's'} in your cart.
                     </p>
-                  </header>
-                  <ul>
+                    </header>
+                    <ul>
                     {me.cart.map(cartItem => <CartItem key={cartItem.id} cartItem={cartItem} />)}
-                  </ul>
-                  <footer>
+                    </ul>
+                    <footer>
                     <div className="total-text">TOTAL</div>
                     <div className="total-price">{formatMoney(calcTotalPrice(me.cart))}</div>
                     {/* <SickButton>Checkout</SickButton> */}
-                  </footer>
+                    </footer>
                 </CartStyles>
-              )}
-            </Query>
-          )}
-        </Mutation>
-      );
-    }}
-  </User>
+                );
+            }}
+        </Composed>
 );
 
 export default Cart;
