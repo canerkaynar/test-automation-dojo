@@ -77,12 +77,17 @@ class UpdateItem extends Component {
 
   updateItem = async (e, updateItemMutation) => {
       e.preventDefault(); 
-      const res = await updateItemMutation({
+      if (confirm('Are you sure you want to update this item?')) {
+        const res = await updateItemMutation({
           variables: {
               id: this.props.id,
               ...this.state
           }
-      });
+        }).catch(err => {
+          alert(err.message);
+        });
+      }
+      
   }
 
   render() {

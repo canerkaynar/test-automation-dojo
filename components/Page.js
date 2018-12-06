@@ -146,7 +146,12 @@ injectGlobal`
     color: ${theme.black};
   }
 
-  button {  font-family: 'roboto regular'; }
+  button {
+      font-family: 'roboto regular';
+      &:focus {
+          outline: none;
+      }
+    }
 
   .btn {
         background: white;

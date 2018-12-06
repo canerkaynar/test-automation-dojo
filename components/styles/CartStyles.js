@@ -1,17 +1,16 @@
 import styled from 'styled-components';
 
 const CartStyles = styled.div`
-  padding: 20px;
+  padding: 15px;
   position: relative;
   background: white;
   position: fixed;
   height: 100%;
   top: 0;
-  right: 0;
-  width: 40%;
-  min-width: 500px;
+  right: 295px;
+  width: 310px;
   bottom: 0;
-  transform: translateX(100%);
+  transform: translateX(200%);
   transition: all 0.3s;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
   z-index: 5;
@@ -19,21 +18,21 @@ const CartStyles = styled.div`
   grid-template-rows: auto 1fr auto;
   ${props => props.open && `transform: translateX(0);`};
   header {
-    border-bottom: 5px solid ${props => props.theme.black};
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    //border-bottom: 1px solid ${props => props.theme.greyLight};
+    padding-bottom: 10px;
   }
   footer {
-    border-top: 10px double ${props => props.theme.black};
+    border-top: 4px double ${props => props.theme.greyLight};
     margin-top: 2rem;
     padding-top: 2rem;
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    font-size: 3rem;
-    font-weight: 900;
-    p {
-      margin: 0;
+    font-size: 2rem;
+    font-family: "roboto bold";
+    .total-price {
+      float: right;
+    }
+    .total-text {
+      float: left;
+      font-family: "roboto regular";
     }
   }
   ul {

@@ -9,7 +9,7 @@ const PaginationStyles = styled.div`
   align-content: center;
   margin: 2rem 0;
   border: 1px solid ${props => props.theme.lightgrey};
-  border-radius: 4px;
+  border-radius: 2px;
   & > * {
     margin: 0;
     padding: 8px 25px;

@@ -10,12 +10,12 @@ const Item = styled.div`
     width: 100%;
     height: 204px;
     display: block;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 2px 2px 0px 0px;
     object-fit: cover;
   }
   p {
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.2;
     font-weight: 300;
     font-size: 1.5rem;
     margin: 5px 0;
@@ -54,7 +54,7 @@ const Item = styled.div`
     position: relative;
     width: 220px;
     margin: 0 auto;
-    border-radius: 4px;
+    border-radius: 2px;
     a {
       display: block;
     }
