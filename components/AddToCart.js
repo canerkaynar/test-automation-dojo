@@ -52,7 +52,7 @@ class AddToCart extends React.Component {
       >
         {(addToCart, { loading }) => (
           <button disabled={loading} onClick={addToCart}>
-            Add{loading && 'ing'} To Cart
+            {loading ? 'Adding To Cart' : 'Add To Cart'}
           </button>
         )}
       </Mutation>

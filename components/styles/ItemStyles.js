@@ -38,9 +38,11 @@ const Item = styled.div`
     & > * {
       background: white;
       border: 0;
-      font-size: 1rem;
+      font-size: 12px;
+      line-height: 1.4;
       padding: 1rem;
       width: 100%;
+      cursor: pointer;
     }
   }
   .detail-wrapper {

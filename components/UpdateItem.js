@@ -190,7 +190,7 @@ class UpdateItem extends Component {
                                   </div>
                                   <div className="spacing-base">
                                     <label htmlFor="description">Description</label>
-                                    <textarea
+                                    <input
                                       id="description"
                                       name="description"
                                       value={values.description}
