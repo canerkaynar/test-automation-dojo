@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const SickButton = styled.button`
   width: auto;
     font-size: 1.5rem;
-    padding: 6px 12px;
+    padding: 6px 24px;
+    line-height: 1.4;
     border-radius: 2px;
     background: #287dc0;
     border: 1px solid #287dc0;

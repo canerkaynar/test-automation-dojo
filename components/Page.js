@@ -153,6 +153,29 @@ injectGlobal`
       }
     }
 
+    label {
+        display: block;
+        padding-left: 2px;
+        padding-bottom: 2px;
+    }
+    .spacing-base-mini {
+        margin-bottom: 5px;
+    }
+    .spacing-base {
+        margin-bottom: 10px;
+    }
+    .spacing-base-big {
+        margin-bottom: 15px;
+    }
+    .spacing-top-mini {
+        margin-top: 5px;
+    }
+    .spacing-top-base {
+        margin-top: 10px;
+    }
+    .spacing-top-big {
+        margin-top: 15px;
+    }
   .btn {
         background: white;
         color: #23282A;

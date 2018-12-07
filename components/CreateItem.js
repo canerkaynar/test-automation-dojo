@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Router from 'next/router';
-import Form from './styles/Form';
+import FormStyle from './styles/Form';
 import formatMoney from '../lib/formatMoney';
 import Error from './ErrorMessage';
 import styled from 'styled-components';
@@ -92,7 +92,8 @@ class CreateItem extends Component {
       <CreateItemStyle>
         <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
           {(createItem, { loading, error }) => (
-            <Form
+            <FormStyle>
+            <form
               onSubmit={async e => {
                 // Stop the form from submitting
                 e.preventDefault();
@@ -168,7 +169,8 @@ class CreateItem extends Component {
                 </div>
                 
               </fieldset>
-            </Form>
+            </form>
+            </FormStyle>
           )}
         </Mutation>
       </CreateItemStyle>

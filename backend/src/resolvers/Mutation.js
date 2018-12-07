@@ -75,7 +75,7 @@ const Mutations = {
         // check if there is a user with that email
         const userExists = await ctx.db.query.user({ where: { email: args.email } });
         if (userExists) {
-          throw new Error(`This account already exists`);
+          throw new Error(`This email address was previously registered in the system. Please enter a different email address.`);
         }
         // hash their password
         const password = await bcrypt.hash(args.password, 10);

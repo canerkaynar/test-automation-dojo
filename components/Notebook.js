@@ -218,6 +218,7 @@ export default class Notebook extends React.Component {
     render() {
       return ( 
         <FormStyle>
+            <form>
             <fieldset>
                 <input type="text" value={this.state.title} onChange={this.changeTitle} placeholder="Enter title" />    
             </fieldset>
@@ -228,6 +229,7 @@ export default class Notebook extends React.Component {
 
             <button onClick={this.handleSubmit} className="btn">Add</button>
             <button onClick={this.handleCancel} className="btn">Reset</button> 
+            </form>
         </FormStyle>
         )
     }

@@ -2,6 +2,7 @@ import FormStyle from '../components/styles/Form.js';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Router from 'next/router';
+import { isIdValue } from 'apollo-utilities';
 
 export default class Input extends React.Component {
 
@@ -17,7 +18,7 @@ export default class Input extends React.Component {
         return (
             <React.Fragment>
                 <h2>Login</h2>
-                <FormStyle onSubmit={(e) => e.preventDefault()}>
+                <FormStyle>
                     <Formik
                         initialValues={{ email: '', password: '' }}
                         onSubmit={(values, { setSubmitting }) => {
@@ -54,49 +55,55 @@ export default class Input extends React.Component {
                         return (
                         <form onSubmit={handleSubmit}>
                             <fieldset>
-                                <label htmlFor="email" style={{ display: 'block' }}>Email</label>
-                                <input  id="email"
-                                        placeholder="Enter your email"
-                                        type="text"
-                                        value={values.email}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        className={
-                                            errors.email && touched.email ? 'text-input error' : 'text-input'
-                                        }
-                                />
-                                {   
-                                    errors.email &&
-                                    touched.email && <div className="input-feedback">{errors.email}</div>
-                                }
-                        </fieldset>
-                        <fieldset>
-                            <label htmlFor="password" style={{ display: 'block' }}>Password</label>
-                            <input  id="password"
-                                    placeholder="Enter your password"
-                                    type="text"
-                                    value={values.password}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    className={
-                                        errors.password && touched.password ? 'text-input error' : 'text-input'
+                                <div className="spacing-base">
+                                    <label htmlFor="email">Email</label>
+                                    <input  id="email"
+                                            placeholder="Enter your email"
+                                            type="text"
+                                            value={values.email}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={
+                                                errors.email && touched.email ? 'text-input error' : 'text-input'
+                                            }
+                                    />
+                                    {   
+                                        errors.email &&
+                                        touched.email && <div className="spacing-top-mini input-feedback">{errors.email}</div>
                                     }
-                            />
-                            {   
-                                errors.password &&
-                                touched.password && <div className="input-feedback">{errors.password}</div>
-                            }
+                                </div>
+
+                                <div className="spacing-base">
+                                    <label htmlFor="password">Password</label>
+                                    <input  id="password"
+                                            placeholder="Enter your password"
+                                            type="text"
+                                            value={values.password}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={
+                                                errors.password && touched.password ? 'text-input error' : 'text-input'
+                                            }
+                                    />
+                                    {   
+                                        errors.password &&
+                                        touched.password && <div className="spacing-top-mini input-feedback">{errors.password}</div>
+                                    }
+                                </div>
+
+                                <div className="spacing-top-big">
+                                    <button type="button"
+                                        className="btn outline"
+                                        onClick={handleReset}
+                                        disabled={!dirty || isSubmitting}>Reset
+                                    </button>
+                                    <button className="btn" type="submit" disabled={isSubmitting}>Submit</button>
+                                    {   
+                                        loginFailed && 
+                                        <div className="input-feedback">Oops, that's not a match.</div>
+                                    }
+                                </div>
                         </fieldset>
-                            <button type="button"
-                                    className="btn outline"
-                                    onClick={handleReset}
-                                    disabled={!dirty || isSubmitting}>Reset
-                            </button>
-                            <button className="btn" type="submit" disabled={isSubmitting}>Submit</button>
-                            {   
-                                loginFailed && 
-                                <div className="input-feedback">Oops, that's not a match.</div>
-                            }
                         </form>
                         );
                      }}

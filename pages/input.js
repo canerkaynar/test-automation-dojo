@@ -10,20 +10,22 @@ export default class Input extends React.Component {
                 <h2>Input</h2>
                 <FormStyle onSubmit={(e) => e.preventDefault()}>
                     <fieldset>
+                    <div className="spacing-base-big">
                         <input className="field1" type="text"/>
-                    </fieldset>
-                    <fieldset>
+                    </div>
+                    <div className="spacing-base-big">
                         <input id="field2" type="text"/>
-                    </fieldset>
-                    <fieldset>
+                    </div>
+                    <div className="spacing-base-big">
                         <input name="field3" type="text"/>
-                    </fieldset>
-                    <fieldset>
+                    </div>
+                    <div className="spacing-base-big">
                         <input placeholder="field4" type="text"/>
-                    </fieldset>
-                    <fieldset>
+                    </div>
+                    <div className="spacing-base">
                         <label htmlFor="field5">watergarden</label>
                         <input id="field5" type="text" placeholder="p-field5"/>
+                    </div>
                     </fieldset>
                 </FormStyle>
             </React.Fragment>

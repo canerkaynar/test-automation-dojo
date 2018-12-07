@@ -12,14 +12,10 @@ const loading = keyframes`
   }
 `;
 
-const Form = styled.form`
+const Form = styled.div`
   font-size: 1.5rem;
   line-height: 1.4;
   
-  label {
-    display: block;
-    margin-bottom: 7px;
-  }
   input,textarea {
     width: 100%;
     padding: 7px 10px 7px 10px;
@@ -64,7 +60,8 @@ const Form = styled.form`
   input[type='submit'] {
     width: auto;
     font-size: 1.5rem;
-    padding: 6px 12px;
+    padding: 6px 24px;
+    line-height: 1.4;
     border-radius: 2px;
     background: #287dc0;
     border: 1px solid #287dc0;
@@ -98,8 +95,8 @@ const Form = styled.form`
 
   .input-feedback {
     color: #ea222f;
-    margin-top: .25rem;
     font-size: 13px;
+    padding-left: 2px;
   }
 
   button:disabled {
@@ -108,14 +105,14 @@ const Form = styled.form`
   }
 
   button + button {
-    margin-left: .5rem;
+    margin-left: 1rem;
   }
 
   fieldset {
     border: 0;
     padding: 0;
     margin: 0;
-    max-width: 400px;
+    max-width: 350px;
     margin-bottom: 15px;
     position: relative;
 
@@ -131,6 +128,37 @@ const Form = styled.form`
   fieldset + fieldset {
     margin-top: 10px;
   }
+
+  *::placeholder {
+    color: #bdbdbd;
+    opacity: 1;
+  }
+
+.file-upload-label {
+  display: block;
+  padding: 1em 2em;
+  color: #fff;
+  background: #222;
+  border-radius: .4em;
+  transition: background .3s;
+  
+  &:hover {
+     cursor: pointer;
+     background: #000;
+  }
+}
+    
+.file-upload-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1;
+    width:0;
+    height: 100%;
+    opacity: 0;
+}
 `;
 
 Form.displayName = 'Form';
