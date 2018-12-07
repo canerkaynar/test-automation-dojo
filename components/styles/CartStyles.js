@@ -7,8 +7,8 @@ const CartStyles = styled.div`
   position: fixed;
   height: 100%;
   top: 0;
-  right: 295px;
-  width: 310px;
+  right: 0;
+  width: 335px;
   bottom: 0;
   transform: translateX(200%);
   transition: all 0.3s;

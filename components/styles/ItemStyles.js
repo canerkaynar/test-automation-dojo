@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Item = styled.div`
   
-  flex: 0 0 33.33%;
+  flex: 0 0 25%;
   margin-bottom: 20px;
   padding: 0 1rem;
 

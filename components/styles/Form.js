@@ -22,6 +22,7 @@ const Form = styled.div`
     font-size: 1.5rem;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
+    display: block;
     &:focus {
       outline: 0;
     }
@@ -87,7 +88,7 @@ const Form = styled.div`
     }
   }
 
-  input.error {
+  input.error, textarea.error {
     border: 1px solid #ea222f;
     background: #fef6f7;
     border-radius: 2px;
@@ -134,18 +135,20 @@ const Form = styled.div`
     opacity: 1;
   }
 
+.file-upload {
+  position: relative;
+  margin-top: 4px;
+}
+
 .file-upload-label {
   display: block;
   padding: 1em 2em;
-  color: #fff;
-  background: #222;
-  border-radius: .4em;
+  color: #212729;
+  border-radius: 2px;
   transition: background .3s;
-  
-  &:hover {
-     cursor: pointer;
-     background: #000;
-  }
+  border: 1px dashed;
+  cursor: pointer;
+
 }
     
 .file-upload-input {
@@ -154,7 +157,6 @@ const Form = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    font-size: 1;
     width:0;
     height: 100%;
     opacity: 0;

@@ -103,7 +103,7 @@ const Inner = styled.div`
     bottom: 0;
     position: absolute;
     overflow: auto;
-    width: calc(100% - 540px);
+    width: calc(100% - 245px);
     background: #fcfcfc;
     margin-left: 245px;
     margin-right: 300px;
@@ -146,7 +146,7 @@ injectGlobal`
     color: ${theme.black};
   }
 
-  button, input {
+  button, input, textarea {
       font-family: 'roboto regular';
       &:focus {
           outline: none;
@@ -223,7 +223,7 @@ class Page extends React.Component {
                             {this.props.children}
                         </Container>
                     </Inner>
-                    <Notebook/>
+                    {/* <Notebook/> */}
                     
 
                     {/* <span className="resizer"></span>
