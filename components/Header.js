@@ -196,9 +196,12 @@ export default class Header extends React.Component {
         return(
             <StyledHeader>
                 <Logo className="bar">
-                    <a href="/">
-                        <img src="/static/kloia-logo.png" srcSet="/static/kloia-logo.png 1x, /static/kloia-logo-2x.png 2x" width="130" height="58"/>
-                    </a>
+                    <Link href="/">
+                        <a>
+                            <img src="/static/kloia-logo.png" srcSet="/static/kloia-logo.png 1x, /static/kloia-logo-2x.png 2x" width="130" height="58"/>
+                        </a>
+                    </Link>
+                   
                 </Logo>
                 <div className="search-container">
                     <input type="text" placeholder="Search..." onChange={this.searchData}/>

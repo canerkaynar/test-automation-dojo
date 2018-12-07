@@ -8,6 +8,7 @@ import Error from './ErrorMessage';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
+import Dropzone from 'react-dropzone'
 
 
 const CreateItemStyle = styled.div`
@@ -22,7 +23,6 @@ const CreateItemStyle = styled.div`
       margin: 0 auto;
       display: block;
       padding: 24px 0px;
-      margin-top: 15px;
       width: 240px;
     }
     .img-wrapper {
@@ -39,6 +39,20 @@ const CreateItemStyle = styled.div`
     float: left;
     margin-left: 40px;    
     width: 400px;
+  }
+  .explanation {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .dropzone {
+    width: 100%;
+    position: relative;
+    height: auto;
+    border-width: 2px;
+    border-color: rgb(102, 102, 102);
+    border-style: dashed;
+    border-radius: 2px;
   }
 `;
 
@@ -71,6 +85,7 @@ class CreateItem extends Component {
     price: undefined,
     file: undefined
   };
+
   handleOnChange(e) {
     const { name, type, value } = e.target;
     const val = type === 'number' ? parseFloat(value) : value;
@@ -140,20 +155,25 @@ class CreateItem extends Component {
                               <fieldset disabled={loading} aria-busy={loading}>
                                 <div className="fieldset-left">
                                   <div className="file-upload">
-                                    <label className="file-upload-label" htmlFor="file">Select a file</label>
-                                    <input
-                                      type="file"
-                                      id="file"
-                                      name="file"
-                                      className="file-upload-input"
-                                      onChange={(e) => {handleChange(e); this.uploadFile(e)}}
-                                    />
-                                    {this.state.image && (
+                                    <Dropzone
+                                        onDrop={this.onDrop}
+                                        onFileDialogCancel={this.onCancel}
+                                        accept="image/jpeg, image/png"
+                                        name="file"
+                                        type="file"
+                                        id="file"
+                                        className="dropzone"
+                                        onChange={(e) => {handleChange(e); this.uploadFile(e)}}
+                                    >
+                                        <div className="explanation">Upload a product image</div>
+                                        {this.state.image && (
                                       <div className="img-wrapper">
                                         <img width="240" src={this.state.image} alt="Upload Preview" />
                                         <div className="file-name">{this.state.file.original_filename}</div>
                                       </div>
                                     )}
+                                    </Dropzone>
+                                    
                                   </div>
                                 </div>
                                 <div className="fieldset-right">
@@ -212,7 +232,7 @@ class CreateItem extends Component {
                                     }
                                   </div>
                                   <div className="spacing-top-big">
-                                    <button className="btn" type="submit" disabled={isSubmitting}>Sign In!</button>
+                                    <button className="btn" type="submit" disabled={isSubmitting}>{loading ? 'Submitting' : 'Submit'}</button>
                                   </div>
                                 </div>
                               </fieldset>
