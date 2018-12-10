@@ -15,11 +15,11 @@ export default class Buttons extends React.Component {
         e.preventDefault(); 
         let buttonName = '';
         if(e.target.tagName === 'A') {
-            buttonName = '3';
+            buttonName = '2';
         } else if (e.target.tagName === 'INPUT') {
-            buttonName = '1';
+            buttonName = '3';
         } else {
-            buttonName = '2';            
+            buttonName = '1';            
         }
         this.setState({
             text: `You have clicked the button ${buttonName}`
@@ -32,10 +32,10 @@ export default class Buttons extends React.Component {
                 <Breadcrumb currentPage="Buttons"/>
                 <h2>Buttons</h2>
                 <FormStyle>
-                    <input onClick={this.handleOnClick} className="btn" type="button" value="Button 1"/><br/><br/>
-                    <button onClick={this.handleOnClick} title="button-title">Button 2</button><br/><br/>
-                    <a onClick={this.handleOnClick} id="button3" className="btn" href="#">Button 3</a>
+                    <button onClick={this.handleOnClick} title="button-title">Button 1</button><br/><br/>
+                    <a onClick={this.handleOnClick} id="button2" className="btn" href="#">Button 2</a>
                     <br/><br/>
+                    <input onClick={this.handleOnClick} className="btn" type="button" value="Button 3"/><br/>
                     <h3>{this.state.text}</h3>
                 </FormStyle>
             </React.Fragment>

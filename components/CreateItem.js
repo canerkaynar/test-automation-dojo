@@ -8,7 +8,9 @@ import Error from './ErrorMessage';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
-import Dropzone from 'react-dropzone'
+import Dropzone from 'react-dropzone';
+import { ALL_ITEMS_QUERY } from './Items';
+
 
 
 const CreateItemStyle = styled.div`
@@ -115,11 +117,15 @@ class CreateItem extends Component {
   render() {
     return (
       <CreateItemStyle>
-        <Mutation mutation={CREATE_ITEM_MUTATION} variables={{
-          ...this.state,
-          image: this.state.image ? this.state.image : 'https://res.cloudinary.com/cnrkynr/image/upload/v1544207274/test-automation-dojo/tofwmhdn7qn9k8d922fb.png',
-          largeImage: this.state.largeImage ? this.state.image : 'https://res.cloudinary.com/cnrkynr/image/upload/c_scale,q_auto,w_350/v1544207274/test-automation-dojo/tofwmhdn7qn9k8d922fb.png',
-          }}>
+        <Mutation 
+          mutation={CREATE_ITEM_MUTATION} 
+          variables={{
+            ...this.state,
+            image: this.state.image ? this.state.image : 'https://res.cloudinary.com/cnrkynr/image/upload/v1544207274/test-automation-dojo/tofwmhdn7qn9k8d922fb.png',
+            largeImage: this.state.largeImage ? this.state.image : 'https://res.cloudinary.com/cnrkynr/image/upload/c_scale,q_auto,w_350/v1544207274/test-automation-dojo/tofwmhdn7qn9k8d922fb.png',
+            }}
+          refetchQueries={[{ query: ALL_ITEMS_QUERY }]}
+          >
           {(createItem, { loading, error }) => (
             <FormStyle>
                 <Formik

@@ -83,6 +83,7 @@ const Form = styled.div`
   input[type='checkbox'] {
     width: auto;
     margin: 5px 7px 5px 0px;
+    display: inline-block;
     & + label {
       display: inline-block;
     }
