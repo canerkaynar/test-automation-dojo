@@ -20,7 +20,7 @@ export default class Input extends React.Component {
                         <input placeholder="field3" type="text"/>
                     </div>
                     <div className="spacing-base-big">
-                        <label htmlFor="field4">label</label>
+                        <label htmlFor="id-field4">label</label>
                         <input id="id-field4" type="text" placeholder="placeholder"/>
                     </div>
                     <div className="spacing-base-big">
