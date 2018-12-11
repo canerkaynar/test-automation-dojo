@@ -52,7 +52,7 @@ const Cart = () => (
                     </ul>
                     <footer>
                     <div className="total-text">TOTAL</div>
-                    <div className="total-price">{formatMoney(calcTotalPrice(me.cart))}</div>
+                    <div className="total-price">${calcTotalPrice(me.cart)}</div>
                     {/* <SickButton>Checkout</SickButton> */}
                     </footer>
                 </CartStyles>

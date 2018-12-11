@@ -10,16 +10,16 @@ export default class Checkbox extends React.Component {
                 <FormStyle onSubmit={(e) => e.preventDefault()}> 
                     <fieldset>
                         <div className="checkbox-wrapper">
-                            <input type="checkbox" id="field1" value="Aragorn"/><label htmlFor="field1">Aragorn</label>
+                            <input type="checkbox" id="field1" value="val-aragorn"/><label htmlFor="field1">Aragorn</label>
                         </div>
                         <div className="checkbox-wrapper">
-                            <input type="checkbox" name="field2" value="Legolas"/><label>Legolas</label>
+                            <input type="checkbox" name="field2" value="val-legolas"/><label>Legolas</label>
                         </div>
                         <div className="checkbox-wrapper">
-                            <input type="checkbox" name="field3" id="field3" value="Legolas"/><label htmlFor="field3">Saruman</label>
+                            <input type="checkbox" name="field3" id="field3" value="val-saruman"/><label htmlFor="field3">Saruman</label>
                         </div>
                         <div className="checkbox-wrapper">
-                            <input type="checkbox" className="field4" value="Gandalf"/><label>Gandalf</label>
+                            <input type="checkbox" value="val-gandalf"/><label>Gandalf</label>
                         </div>
                     </fieldset>
                 </FormStyle>

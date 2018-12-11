@@ -13,6 +13,7 @@ const CartItemStyles = styled.li`
   img {
     margin-right: 10px;
     border-radius: 2px;
+    object-fit: cover;
   }
   .cart-item-title {
       margin-bottom: 10px;
@@ -47,7 +48,7 @@ const CartItem = ({ cartItem }) => {
         <div className="cart-item-title">{cartItem.item.title}</div>
         <p>
             <span className="quantity">{cartItem.quantity} pcs</span>
-            <span className="price">{formatMoney(cartItem.item.price * cartItem.quantity)}</span>
+            <span className="price">${cartItem.item.price * cartItem.quantity}</span>
         </p>
       </div>
       <RemoveFromCart id={cartItem.id} />
